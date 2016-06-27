@@ -1,0 +1,3 @@
+r13dev http://slc11fgu.us.oracle.com:8081/env_viewer.jsp?sort=1&file=%2Fslot%2Fems16824%2Fappmgr%2FAPPTOP%2Finstance%2Fdomains%2Fslc11fgu.us.oracle.com%2FProjectsDomain%2Fservers%2FProjectsManagementServer_1%2Flogs%2FProjectsManagementServer_1.out
+r13qa http://slc11gaz.us.oracle.com:8081/env_viewer.jsp?sort=1&file=%2Fslot%2Fems5615%2Fappmgr%2FAPPTOP%2Finstance%2Fdomains%2Fslc11gaz.us.oracle.com%2FProjectsDomain%2Fservers%2FProjectsManagementServer_1%2Flogs%2FProjectsManagementServer_1.log
+r12st1cdrm /net/slcao658.us.oracle.com/scratch/fusionapps/localdomain/domains/slcao658.us.oracle.com/ProjectsDomain/servers/ProjectsManagementServer_1/logs/ProjectsManagementServer_1.log
