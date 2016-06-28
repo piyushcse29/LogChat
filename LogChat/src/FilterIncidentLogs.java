@@ -13,18 +13,16 @@ public class FilterIncidentLogs {
 
 	void logs(Chat chat, String env, TreeMap<String, String> serverInfo, String lines) throws NotConnectedException {
 
-		URL oracle = null;
+		URL url = null;
 		try {
-			oracle = new URL(serverInfo.get(env) + "incdir_" + lines + "%2Freadme.txt");
+			url = new URL(serverInfo.get(env) + "incdir_" + lines + "%2Freadme.txt");
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			printError(chat);
 		}
 		String info = "Press below link for complete incident logs:\n" + serverInfo.get(env) + "incdir_" + lines;
 		try {
 			chat.sendMessage(info);
 		} catch (NotConnectedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -34,7 +32,6 @@ public class FilterIncidentLogs {
 		try {
 			chat.sendMessage(info);
 		} catch (NotConnectedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

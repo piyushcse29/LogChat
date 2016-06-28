@@ -16,7 +16,7 @@ public class FilterLogs {
 	 * @param message
 	 * @throws NotConnectedException
 	 */
-	void function(Chat chat, Message message) throws NotConnectedException {
+	void filterLogs(Chat chat, Message message) throws NotConnectedException {
 		TreeMap<String, String> serverlogInfo = new ServerLogDetails().loadServerInfo();
 		TreeMap<String, String> incidentlogInfo = new IncidentLogDetails().loadServerInfo();
 		if (message == null || message.getBody() == null)
@@ -108,7 +108,6 @@ public class FilterLogs {
 					chat.sendMessage(info);
 
 				} catch (NotConnectedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				return;
@@ -141,7 +140,6 @@ public class FilterLogs {
 		try {
 			chat.sendMessage(info);
 		} catch (NotConnectedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -155,7 +153,6 @@ public class FilterLogs {
 		try {
 			chat.sendMessage(info);
 		} catch (NotConnectedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

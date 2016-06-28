@@ -12,32 +12,23 @@ import org.apache.commons.net.ftp.FTPClient;
  */
 public class FTPReader {
 
+	/*
+	 * Test
+	 */
 	public static void main(String[] args) throws SocketException, IOException {
 		FTPClient ftpClient = new FTPClient();
 		ftpClient.connect("indl124121.in.abc.com");
 		ftpClient.login("piymitta", "pass");
 
-		BufferedReader reader = null;
-		String firstLine = null;
-
-		String str = "/net/slcao668.us.oracle.com/scratch/fusionapps/localdomain/domains/slcao668.us.oracle.com/ProjectsDomain/servers/ProjectsManagementServer_1/logs/ProjectsManagementServer_1.out";
+		String str = "/net/slcao668.us.abc.com/scratch/fusionapps/localdomain/domains/slcao668.us.abc.com/ProjectsDomain/servers/ProjectsManagementServer_1/logs/ProjectsManagementServer_1.out";
 		System.out.println(str.contains("/net"));
-		// try {
-		// InputStream stream =
-		// ftpClient.retrieveFileStream("/scratch/piyush.txt");
-		// reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
-		// firstLine = reader.readLine();
-		// System.out.println(firstLine);
-		// } finally {
-		// if (reader != null) try { reader.close(); } catch (IOException
-		// logOrIgnore) {}
-		// }
+
 	}
 
 	BufferedReader readFTPFile(String path) throws SocketException, IOException {
 		FTPClient ftpClient = new FTPClient();
-		ftpClient.connect("indl124121.in.oracle.com");
-		ftpClient.login("piymitta", "Divya@27");
+		ftpClient.connect("indl124121.in.abc.com");
+		ftpClient.login("piymitta", "pass");
 
 		BufferedReader reader = null;
 

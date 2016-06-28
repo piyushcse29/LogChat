@@ -23,7 +23,6 @@ public class FilterServerLogs {
 			try {
 				chat.sendMessage(info);
 			} catch (NotConnectedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
@@ -34,7 +33,6 @@ public class FilterServerLogs {
 					url = new URL(serverInfo.get(env));
 
 			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			BufferedReader br = null;
@@ -44,7 +42,6 @@ public class FilterServerLogs {
 				else
 					br = new BufferedReader(new InputStreamReader(url.openStream()));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -60,13 +57,11 @@ public class FilterServerLogs {
 			try {
 				new FileHandling().printNLines(chat, br, maxLines);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			try {
 				br.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -83,7 +78,6 @@ public class FilterServerLogs {
 			else
 				url = new URL(serverInfo.get(env));
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		BufferedReader br = null;
@@ -93,21 +87,18 @@ public class FilterServerLogs {
 			else
 				br = new BufferedReader(new InputStreamReader(url.openStream()));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
 			new FileHandling().searchText(chat, br, text);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			br.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				e.printStackTrace();
 		}
 
 	}
@@ -117,7 +108,6 @@ public class FilterServerLogs {
 		try {
 			chat.sendMessage(info);
 		} catch (NotConnectedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -127,7 +117,6 @@ public class FilterServerLogs {
 		try {
 			chat.sendMessage(info);
 		} catch (NotConnectedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

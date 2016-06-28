@@ -1,3 +1,14 @@
+/* 
+ * A tool that gets Application Server Logs, Incident logs and much more
+ * right on pidgin or other xmpp chat client window with simple commands.
+ * LogChat reads messages from  chat clients and responds back to sender with
+ * appropriate messages. Keeping in mind the effort we need to make to get the server logs
+ * and incident reports this tool helps to get the results in moments.
+ * 
+ * For more info contact at m@piyushmittal.com
+ * 
+ * */
+
 import java.io.IOException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
@@ -17,6 +28,7 @@ import org.jivesoftware.smack.chat.ChatMessageListener;
 import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.tcp.XMPPTCPConnection;
 import org.jivesoftware.smack.tcp.XMPPTCPConnectionConfiguration;
+
 
 /**
  * @author piymitta
@@ -67,10 +79,11 @@ public class LogChat implements MessageListener {
 		chatmanager.addChatListener(new ChatManagerListenerImpl());
 
 		chatmanager.createChat("piyush.m.mittal@abc.com", new ChatMessageListener() {
+			@Override
 			public void processMessage(Chat chat, Message message) {
 				if (message != null && message.getBody() != null && message.getBody().equals("serverlog")) {
 					try {
-						chat.sendMessage("Howdy old!");
+						chat.sendMessage("All Done!");
 					} catch (NotConnectedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -79,10 +92,7 @@ public class LogChat implements MessageListener {
 			}
 		});
 
-		// idle for 20 seconds
-		final long start = System.nanoTime();
-		while (true)// (System.nanoTime() - start) / 1000000 < 200000000) // do
-					// for 20 seconds
+		while (true)
 		{
 			Thread.sleep(500);
 		}
@@ -94,17 +104,15 @@ class ChatManagerListenerImpl implements ChatManagerListener {
 	@Override
 	public void chatCreated(final Chat chat, final boolean createdLocally) {
 		chat.addMessageListener(new ChatMessageListener() {
+			@Override
 			public void processMessage(Chat chat, Message message) {
 				try {
-					new FilterLogs().function(chat, message);
+					new FilterLogs().filterLogs(chat, message);
 				} catch (NotConnectedException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 				;
-
-			}
-
+		     }
 		});
 	}
 

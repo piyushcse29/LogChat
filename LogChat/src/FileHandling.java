@@ -13,7 +13,7 @@ import org.jivesoftware.smack.chat.Chat;
 public class FileHandling {
 
 	/**
-	 * @param args
+	 * Test
 	 */
 	public static void main(String[] args) {
 		try {
@@ -21,26 +21,21 @@ public class FileHandling {
 					new FileHandling().getClass().getClassLoader().getResourceAsStream("serverlog_details.txt")));
 
 			ArrayList<String> lines = new ArrayList<String>();
-			int n = 4;
 			String tmp = "";
-			while ((tmp = br.readLine()) != null) {
-				// if(tmp.contains("r13dev"))
+			while ((tmp = br.readLine()) != null) 
 				lines.add(tmp);
-			}
+			
 
-			for (int i = 0; i < lines.size(); i++) {
+			for (int i = 0; i < lines.size(); i++) 
 				System.out.println(lines.get(i));
-			}
+			
 
-			URL oracle = new URL(
-					"/net/slcao668.us.oracle.com/scratch/fusionapps/localdomain/domains/slcao668.us.oracle.com/ProjectsDomain/servers/ProjectsManagementServer_1/logs/ProjectsManagementServer_1.out");
-			// URL oracle = new
-			// URL("https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?report_title=Open%20Bugs%20for%20PIYMITTA&rptno=21260537&query_id=192500&rptno_count=2&pos=1");
-			br = new BufferedReader(new InputStreamReader(oracle.openStream()));
-			while ((tmp = br.readLine()) != null) {
-				// if(tmp.contains("r13dev"))
-				System.out.println(br.readLine());
-			}
+			URL abc = new URL(
+					"/net/slcao668.us.abc.com/scratch/fusionapps/localdomain/domains/slcao668.us.abc.com/ProjectsDomain/servers/ProjectsManagementServer_1/logs/ProjectsManagementServer_1.out");
+			br = new BufferedReader(new InputStreamReader(abc.openStream()));
+			while ((tmp = br.readLine()) != null) 
+					System.out.println(br.readLine());
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}
